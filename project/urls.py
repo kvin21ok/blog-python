@@ -15,7 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from BlogcitoPython.views import index, PostList, CreatePost
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('blogcitopython/', index, name='blogcitopython_index'),
+    path('blogcitopython/listar/', PostList.as_view(), name='blogcitopython_listar'),
+    path('blogcitopython/crear/', CreatePost.as_view(), name='blogcitopython_crear'),
 ]
