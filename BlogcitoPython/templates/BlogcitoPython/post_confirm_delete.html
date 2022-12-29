@@ -1,0 +1,10 @@
+{% extends 'BlogcitoPython/base.html' %}
+
+{% block contenido %}
+<h1>Estás seguro de querer borrar el post "{{object.title}}"</h1>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="SI">
+</form>
+{% endblock %}

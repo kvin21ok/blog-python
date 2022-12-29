@@ -1,0 +1,9 @@
+{% extends 'BlogcitoPython/base.html' %}
+
+{% block contenido %}
+    <h1> {{object.title}} </h1>
+    <h3> {{object.subtitle}} </h3>
+    <div>
+        {{object.text}}
+    </div>
+{% endblock %}
