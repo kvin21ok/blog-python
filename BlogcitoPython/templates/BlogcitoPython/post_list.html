@@ -1,14 +1,19 @@
 {% extends 'BlogcitoPython/base.html' %}
 
 {% block contenido %}
-<ul>
-{% for post in object_list %}
-    <li>
-        {{post.title}} // // {{post.publish_date}}
-        <a href="{% url 'blogcitopython_detalle' post.id %}"> Ver </a>
-        <a href="{% url 'blogcitopython_actualizar' post.id %}"> Actualizar </a>
-        <a href="{% url 'blogcitopython_borrar' post.id %}"> Borrar </a>
-    </li>
-{% endfor %}
-</ul>
+    {% if user.is_authenticated %}
+        <a href="{% url 'blogcitopython_crear' %}"> Crear post nuevo! </a>
+    {% endif %}
+    <ul>
+    {% for post in object_list %}
+        <li>
+            {{post.title}} // // {{post.publish_date}}
+            <a href="{% url 'blogcitopython_detalle' post.id %}"> Ver </a>
+            {% if user.is_authenticated %}
+                <a href="{% url 'blogcitopython_actualizar' post.id %}"> Actualizar </a>
+                <a href="{% url 'blogcitopython_borrar' post.id %}"> Borrar </a>
+            {% endif %}
+        </li>
+    {% endfor %}
+    </ul>
 {% endblock %}

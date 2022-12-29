@@ -1,0 +1,10 @@
+{% extends 'BlogcitoPython/base.html' %}
+
+{% block contenido %}
+    <h2> Dar de alta un usuario</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Registarme!"></input>
+    </form>
+{% endblock %}

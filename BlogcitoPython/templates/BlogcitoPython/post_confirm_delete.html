@@ -5,6 +5,7 @@
 <form method="POST">
     {% csrf_token %}
     {{ form.as_p }}
-    <input type="submit" value="SI">
+    <input type="submit" value="SI"> <a href="{% url 'blogcitopython_listar' %}" style="color: red; font-weight: bolder"> NO </a>
 </form>
+
 {% endblock %}

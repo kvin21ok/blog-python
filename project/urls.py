@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from BlogcitoPython.views import index, PostList, CreatePost, DetailPost, DeletePost, UpdatePost
+from BlogcitoPython.views import index, PostList, CreatePost, DetailPost, DeletePost, UpdatePost, UserSignUp, UserLogin, UserLogout
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,4 +25,7 @@ urlpatterns = [
     path('blogcitopython/<int:pk>/detalle/', DetailPost.as_view(), name='blogcitopython_detalle'),
     path('blogcitopython/<int:pk>/borrar/', DeletePost.as_view(), name='blogcitopython_borrar'),
     path('blogcitopython/<int:pk>/actualizar/', UpdatePost.as_view(), name='blogcitopython_actualizar'),
+    path('blogcitopython/signup/', UserSignUp.as_view(), name='blogcitopython_signup'),
+    path('blogcitopython/login/', UserLogin.as_view(), name='blogcitopython_login'),
+    path('blogcitopython/logout/', UserLogout.as_view(), name='blogcitopython_logout'),
 ]
