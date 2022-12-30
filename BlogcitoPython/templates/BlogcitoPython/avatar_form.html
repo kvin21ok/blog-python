@@ -4,6 +4,6 @@
 <form enctype="multipart/form-data" method="POST">
     {% csrf_token %}
     {{form.as_p}}
-    <input type="submit" value="Postear"> <a href="{% url 'blogcitopython_listar' %}"> Volver </a>
+    <input type="submit" value="Actualizar avatar!"> <a href="{% url 'blogcitopython_listar' %}"> Volver </a>
 </form>
 {% endblock %}

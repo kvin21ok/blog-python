@@ -4,7 +4,7 @@ from django.views.generic import ListView, CreateView, DetailView, UpdateView, D
 from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
-from BlogcitoPython.models import Post
+from BlogcitoPython.models import Post, Avatar
 from BlogcitoPython.forms import UserForm
 
 def index(request):
@@ -40,3 +40,8 @@ class UserLogin(LoginView):
 
 class UserLogout(LogoutView):
     next_page = reverse_lazy('blogcitopython_listar')
+
+class UpdateAvatar(LoginRequiredMixin, UpdateView):
+    model = Avatar
+    fields = ['image']
+    success_url = reverse_lazy('blogcitopython_listar')
