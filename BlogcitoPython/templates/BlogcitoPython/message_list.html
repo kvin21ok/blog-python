@@ -1,0 +1,14 @@
+{% extends 'BlogcitoPython/base.html' %}
+
+{% block contenido %}
+<ul>
+    {% for message in object_list %}
+    <li>
+        {{message.send_date}} // {{message.email}} // {{message.name}}
+        <a href="{% url 'blogcitopython_detalle_mensajes' message.id %}"> Ver! </a>
+        <a href="{% url 'blogcitopython_borrar_mensajes' message.id %}"> Borrar </a>
+    </li> 
+    {% endfor %}
+</ul>
+<a href="{% url 'blogcitopython_listar' %}"> Volver a lista de posts </a>
+{% endblock %}

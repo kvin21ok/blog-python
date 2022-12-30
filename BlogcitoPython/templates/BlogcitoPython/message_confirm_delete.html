@@ -1,0 +1,11 @@
+{% extends 'BlogcitoPython/base.html' %}
+
+{% block contenido %}
+<h1>Estás seguro de querer borrar el mensaje de {{object.name}}</h1>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="SI"> <a href="{% url 'blogcitopython_listar_mensajes' %}" style="color: red; font-weight: bolder"> NO </a>
+</form>
+
+{% endblock %}

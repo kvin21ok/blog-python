@@ -1,0 +1,9 @@
+{% extends 'BlogcitoPython/base.html' %}
+
+{% block contenido %}
+<form method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Actualizar datos"> <a href="{% url 'blogcitopython_listar' %}"> Volver </a>
+</form>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'BlogcitoPython/base.html' %}
+
+{% block contenido %}
+    <h5>Enviado por: {{object.name}} </h5>
+    <div>
+        {{object.text}}
+    </div>
+    <h6> {{object.email}} </h6>
+    <a href="{% url 'blogcitopython_listar_mensajes' %}"> Volver </a>
+{% endblock %}

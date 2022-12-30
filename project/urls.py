@@ -19,7 +19,9 @@ from django.conf import settings
 from django.conf.urls.static import static
 from BlogcitoPython.views import (index, PostList, CreatePost, 
                                     DetailPost, DeletePost, UpdatePost,
-                                    UserSignUp, UserLogin, UserLogout,UpdateAvatar)
+                                    UserSignUp, UserLogin, UserLogout,
+                                    UpdateAvatar, UpdateUser, CreateMessage,
+                                    MessageList, DetailMessage, DeleteMessage)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -33,6 +35,11 @@ urlpatterns = [
     path('blogcitopython/login/', UserLogin.as_view(), name='blogcitopython_login'),
     path('blogcitopython/logout/', UserLogout.as_view(), name='blogcitopython_logout'),
     path('blogcitopython/avatars/<int:pk>/actualizar/', UpdateAvatar.as_view(), name='blogcitopython_actualizar_avatar'),
+    path('blogcitopython/users/<int:pk>/actualizar/', UpdateUser.as_view(), name='blogcitopython_actualizar_usuario'),
+    path('blogcitopython/mensajes/crear/', CreateMessage.as_view(), name='blogcitopython_crear_mensajes'),
+    path('blogcitopython/mensajes/<int:pk>/detalle/', DetailMessage.as_view(), name='blogcitopython_detalle_mensajes'),
+    path('blogcitopython/mensajes/listar/', MessageList.as_view(), name='blogcitopython_listar_mensajes'),
+    path('blogcitopython/mensajes/<int:pk>/borrar/', DeleteMessage.as_view(), name='blogcitopython_borrar_mensajes'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
