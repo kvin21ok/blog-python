@@ -67,3 +67,6 @@ class CreateMessage(CreateView):
 class DeleteMessage(LoginRequiredMixin, DeleteView):
     model = Message
     success_url = reverse_lazy('blogcitopython_listar_mensajes')
+
+def about(request):
+    return render(request, 'BlogcitoPython/about.html')

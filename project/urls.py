@@ -21,7 +21,8 @@ from BlogcitoPython.views import (index, PostList, CreatePost,
                                     DetailPost, DeletePost, UpdatePost,
                                     UserSignUp, UserLogin, UserLogout,
                                     UpdateAvatar, UpdateUser, CreateMessage,
-                                    MessageList, DetailMessage, DeleteMessage)
+                                    MessageList, DetailMessage, DeleteMessage,
+                                    about)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -40,6 +41,7 @@ urlpatterns = [
     path('blogcitopython/mensajes/<int:pk>/detalle/', DetailMessage.as_view(), name='blogcitopython_detalle_mensajes'),
     path('blogcitopython/mensajes/listar/', MessageList.as_view(), name='blogcitopython_listar_mensajes'),
     path('blogcitopython/mensajes/<int:pk>/borrar/', DeleteMessage.as_view(), name='blogcitopython_borrar_mensajes'),
+    path('blogcitopython/about/', about, name= 'blogcitopython_about')
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
