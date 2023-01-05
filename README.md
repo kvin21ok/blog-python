@@ -9,9 +9,16 @@ Como usar la app:
 
 • En la misma terminal va aparecer la siguiente línea "Starting development server at http://127.0.0.1:8000/", podés copiar y pegar la dirección en tu navegador o usar ctrl+click y te abrirá una pestaña nueva.
 
-• La primera opcion del menú te va a llevar a la página de administración de django, podrás ingresar con * usuario a crear para grabar el video *.
+• La primera opcion del menú (/admin) te va a llevar a la página de administración de django, podrás ingresar usando "admin" como user y password.
 
 • Las demás opciones que aparezcan ya son de la app en si, dentro de ella podrás crear tu usuario, postear, actualizar tu perfil, ver posts creados antiguamente...
 
 IMPORTANTE!!!:
                 Para poder usar la opción de cambiar el avatar de perfil es necesario haber subido uno antes desde la página de administración de django con un superusuario y elegir a quién se lo vas a designar. De no hacerse esto no va a ser posible el cambio de avatar ya que la opción no aparecerá en la interfaz.
+
+Cuentas creadas:
+                user: admin, password: admin //// STAFF
+                user: kevin, password: bragado2022
+                user: hideonbush, password: bragado2023
+
+Link a video: https://youtu.be/WfODhWzKmg8
