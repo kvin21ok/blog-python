@@ -7,8 +7,8 @@
         <div class="col-lg-8">
             {% if posts %}
                 <!-- Featured blog post-->
+                {% if posts.0 %}
                 <div class="card mb-4">
-                    {% if posts.0 %}
                     <a href="#!"><img class="card-img-top" src="{{posts.0.image.url}}" alt="..." /></a>
                     <div class="card-body">
                         <div class="small text-muted">{{posts.0.publish_date}}</div>
@@ -16,14 +16,14 @@
                         <p class="card-text">{{posts.0.subtitle}}</p>
                         <a class="btn btn-primary" href="{% url 'blogcitopython_detalle' posts.0.id %}">Leer Mas →</a>
                     </div>
-                    {% endif %}
                 </div>
+                {% endif %}
                 <!-- Nested row for non-featured blog posts-->
                 <div class="row">
                     <div class="col-lg-6">
                         <!-- Blog post-->
+                        {% if posts.1 %}
                         <div class="card mb-4">
-                            {% if posts.1 %}
                             <a href="#!"><img class="card-img-top" src="{{posts.1.image.url}}" alt="..." /></a>
                             <div class="card-body">
                                 <div class="small text-muted">{{posts.1.publish_date}}</div>
@@ -31,11 +31,11 @@
                                 <p class="card-text">{{posts.1.subtitle}}</p>
                                 <a class="btn btn-primary" href="{% url 'blogcitopython_detalle' posts.1.id %}">Leer Mas →</a>
                             </div>
-                            {% endif %}
                         </div>
+                        {% endif %}
                         <!-- Blog post-->
+                        {% if posts.2 %}
                         <div class="card mb-4">
-                            {% if posts.2 %}
                             <a href="#!"><img class="card-img-top" src="{{posts.2.image.url}}" alt="..." /></a>
                             <div class="card-body">
                                 <div class="small text-muted">{{posts.2.publish_date}}</div>
@@ -43,13 +43,13 @@
                                 <p class="card-text">{{posts.2.subtitle}}</p>
                                 <a class="btn btn-primary" href="{% url 'blogcitopython_detalle' posts.2.id %}">Leer Mas →</a>
                             </div>
-                            {% endif %}
                         </div>
+                        {% endif %}
                     </div>
                     <div class="col-lg-6">
                         <!-- Blog post-->
+                        {% if posts.3 %}
                         <div class="card mb-4">
-                            {% if posts.3 %}
                             <a href="#!"><img class="card-img-top" src="{{posts.3.image.url}}" alt="..." /></a>
                             <div class="card-body">
                                 <div class="small text-muted">{{posts.3.publish_date}}</div>
@@ -57,11 +57,11 @@
                                 <p class="card-text">{{posts.3.subtitle}}</p>
                                 <a class="btn btn-primary" href="{% url 'blogcitopython_detalle' posts.3.id %}">Leer Mas →</a>
                             </div>
-                            {% endif %}
                         </div>
+                        {% endif %}
                         <!-- Blog post-->
+                        {% if posts.4 %}
                         <div class="card mb-4">
-                            {% if posts.4 %}
                             <a href="#!"><img class="card-img-top" src="{{posts.4.image.url}}" alt="..." /></a>
                             <div class="card-body">
                                 <div class="small text-muted">{{posts.4.publish_date}}</div>
@@ -69,10 +69,10 @@
                                 <p class="card-text">{{posts.4.subtitle}}</p>
                                 <a class="btn btn-primary" href="{% url 'blogcitopython_detalle' posts.4.id %}">Leer Mas →</a>
                             </div>
-                            {% endif %}
                         </div>
+                        {% endif %}
+                        {% if posts.5 %}
                         <div class="card mb-4">
-                            {% if posts.5 %}
                             <a href="#!"><img class="card-img-top" src="{{posts.5.image.url}}" alt="..." /></a>
                             <div class="card-body">
                                 <div class="small text-muted">{{posts.5.publish_date}}</div>
@@ -80,8 +80,8 @@
                                 <p class="card-text">{{posts.5.subtitle}}</p>
                                 <a class="btn btn-primary" href="{% url 'blogcitopython_detalle' posts.5.id %}">Leer Mas →</a>
                             </div>
-                            {% endif %}
                         </div>
+                        {% endif %}
                     </div>
                 </div>
             {% else %}

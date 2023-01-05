@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, DetailView, UpdateView, DeleteView
+from django.views.generic.base import View
 from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
@@ -66,7 +67,7 @@ class CreateMessage(CreateView):
 
 class DeleteMessage(LoginRequiredMixin, DeleteView):
     model = Message
-    success_url = reverse_lazy('blogcitopython_listar_mensajes')
+    success_url = reverse_lazy('blogcitopython_listar_mensajes')  
 
 def about(request):
     return render(request, 'BlogcitoPython/about.html')

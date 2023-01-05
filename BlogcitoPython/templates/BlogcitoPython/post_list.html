@@ -1,12 +1,16 @@
 {% extends 'BlogcitoPython/base.html' %}
 
 {% block contenido %}
+<div style="text-align: center;">
     {% if user.is_authenticated %}
-        <a class="btn btn-primary" href="{% url 'blogcitopython_crear' %}"> Crear post nuevo! </a>
-        <a class="btn btn-secondary" href="{% url 'blogcitopython_actualizar_avatar' user.id %}"> Actualizar Avatar </a>
-        <a class="btn btn-secondary" href="{% url 'blogcitopython_actualizar_usuario' user.id %}"> Actualizar perfil </a>
-        <a class="btn btn-secondary" href="{% url 'blogcitopython_listar_mensajes' %}"> Mensajeria </a>
+            <a class="btn btn-primary" href="{% url 'blogcitopython_crear' %}"> Crear post nuevo! </a>
+            {% if user.avatar.image %}
+                <a class="btn btn-secondary" href="{% url 'blogcitopython_actualizar_avatar' user.id %}"> Actualizar Avatar </a>
+            {% endif %}
+            <a class="btn btn-secondary" href="{% url 'blogcitopython_actualizar_usuario' user.id %}"> Actualizar perfil </a>
+            <a class="btn btn-secondary" href="{% url 'blogcitopython_listar_mensajes' %}"> Mensajeria </a>
     {% endif %}
+</div>
     <ul>
     {% for post in object_list %}
         <li>
