@@ -18,7 +18,9 @@ IMPORTANTE!!!:
 
 Cuentas creadas:
                 user: admin, password: admin //// STAFF
+
                 user: kevin, password: bragado2022
+                
                 user: hideonbush, password: bragado2023
 
 Link a video: https://youtu.be/WfODhWzKmg8
